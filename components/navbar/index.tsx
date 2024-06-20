@@ -9,10 +9,10 @@ const tabs = [
 ]
 export default function Navbar() {
     return(
-        <nav className="w-main max-w-main mx-auto p-6 flex items-center justify-between">
+        <nav className="w-main max-w-main p-6 absolute left-2/4 -translate-x-2/4 z-20 flex items-center justify-between">
             <div className="flex items-center gap-8">
                 <Link
-                    className="text-2xl font-bold" 
+                    className="text-2xl font-bold text-light" 
                     href={'/'}
                 >
                     {process.env.NEXT_PUBLIC_WEBSITE_NAME}
@@ -21,6 +21,7 @@ export default function Navbar() {
                     {tabs.map(tab => (
                         <li key={tab.id}>
                             <a
+                                className="text-light"
                                 href={`#${tab.id}`}
                             >
                                 {tab.text}
