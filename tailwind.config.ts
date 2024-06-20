@@ -23,7 +23,13 @@ const config: Config = {
         primary: '#0f172a',
         muted: '#475569',
         light: '#fff',
-      }
+      },
+      width: {
+        main: '1200px',
+      },
+      maxWidth: {
+        main: '90%',
+      },
     },
   },
   plugins: [],
