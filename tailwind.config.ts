@@ -5,6 +5,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./assets/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -29,6 +30,12 @@ const config: Config = {
       },
       maxWidth: {
         main: '90%',
+      },
+      fill: {
+        primary: '#fff',
+        secondary: '#F2F2F2',
+        tertiary: '#E7E7E7',
+        'c-primary': '#38005f',
       },
     },
   },
