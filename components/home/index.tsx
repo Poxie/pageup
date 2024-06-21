@@ -15,6 +15,7 @@ export default function Home() {
             <BallDivider className="rotate-180" />
             <HomeProjects />
             <HomeContact />
+            <BallDivider className="rotate-180" dark />
         </main>
     )
 }
