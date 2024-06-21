@@ -9,11 +9,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      padding: {
+        section: '6rem 0',
+      },
       backgroundColor: {
         primary: '#fff',
         secondary: '#F2F2F2',
         tertiary: '#E7E7E7',
-        'c-primary': '#38005f',
+        'c-primary': '#DC143C',
       },
       borderColor: {
         primary: '#fff',
@@ -24,6 +27,7 @@ const config: Config = {
         primary: '#0f172a',
         muted: '#475569',
         light: '#fff',
+        'c-primary': '#DC143C',
       },
       width: {
         main: '1200px',
@@ -35,8 +39,12 @@ const config: Config = {
         primary: '#fff',
         secondary: '#F2F2F2',
         tertiary: '#E7E7E7',
-        'c-primary': '#38005f',
+        'c-primary': '#DC143C',
+        't-muted': '#475569',
       },
+      animation: {
+
+      }
     },
   },
   plugins: [],
