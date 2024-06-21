@@ -1,0 +1,9 @@
+[
+    { "title": "Prestanda", "description": "Prestandan är viktigt för oss. Det gör all skillnad för användaren." },
+    { "title": "Mobil-först tänk", "description": "Vi bygger hemsidor med mobilen i åtanke först. De ser bra ut överallt." },
+    { "title": "SEO-optimering", "description": "Alla våra sidor är anpassade för att ranka högt på sökmotorer." },
+    { "title": "UX i fokus", "description": "Det är lätt för användare att använda våra hemsidor." },
+    { "title": "Design", "description": "Designen sker först. Vi skapar en mall för att säkerställa att du blir nöjd." },
+    { "title": "Tillgänglighet", "description": "Våra hemsidor är användarvänliga för alla. Funktionshinder är inga problem." },
+    { "title": "Säkerhet", "description": "Vi följer alla krav för att se till att hemsidorna vi skapar är säkra." }
+]
