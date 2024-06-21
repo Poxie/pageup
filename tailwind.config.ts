@@ -17,11 +17,15 @@ const config: Config = {
         secondary: '#F2F2F2',
         tertiary: '#E7E7E7',
         'c-primary': '#DC143C',
+        danger: '#FF0000',
+        success: '#00FF00',
       },
       borderColor: {
         primary: '#fff',
         secondary: '#F2F2F2',
         tertiary: '#E7E7E7',
+        danger: '#FF0000',
+        success: '#00FF00',
       },
       textColor: {
         primary: '#0f172a',
