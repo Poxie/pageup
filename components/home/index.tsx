@@ -2,6 +2,7 @@ import BallDivider from "../BallDivider";
 import HomeAbout from "./HomeAbout";
 import HomeFocus from "./HomeFocus";
 import HomeHero from "./HomeHero";
+import HomeProjects from "./HomeProjects";
 
 export default function Home() {
     return(
@@ -11,6 +12,7 @@ export default function Home() {
             <BallDivider />
             <HomeFocus />
             <BallDivider className="rotate-180" />
+            <HomeProjects />
         </main>
     )
 }
