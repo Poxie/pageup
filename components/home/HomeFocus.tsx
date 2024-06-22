@@ -7,7 +7,7 @@ export default function HomeFocus() {
     return(
         <section>
             <div className="p-section w-main max-w-main mx-auto flex divide-x-2 divide-secondary">
-                <div className="pr-8 flex-1 flex flex-col gap-3 sticky top-1/3 self-start">
+                <div className="pr-8 flex-1 flex flex-col gap-3 sticky top-[20%] self-start">
                     <h2 className="text-4xl font-semibold">
                         Vårt fokus är
                         {' '}
