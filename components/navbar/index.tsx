@@ -3,7 +3,7 @@ import Link from "next/link";
 import Button from "../button";
 import { twMerge } from "tailwind-merge";
 import HamIcon from "@/assets/icons/HamIcon";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useScreenSize from "@/hooks/useScreenSize";
 
 const tabs = [
@@ -15,17 +15,55 @@ export default function Navbar() {
     const screenSize = useScreenSize();
     const isSmall = ['sm', 'md'].includes(screenSize);
 
+    const ref = useRef<HTMLElement>(null);
     const [open, setOpen] = useState(false);
+    const [hasScrolled, setHasScrolled] = useState(false);
+    const [dark, setDark] = useState(false);
 
     useEffect(() => {
         if(!isSmall) setOpen(false);
     }, [isSmall]);
+    useEffect(() => {
+        const onScroll = () => {
+            const aboutSection = document.getElementById('about-us');
+            if(!ref.current || !aboutSection) return;
+
+            const rect = aboutSection.getBoundingClientRect();
+            const { height } = ref.current.getBoundingClientRect();
+            const fromTop = rect.top - height / 2;
+
+            if(fromTop < 0) {
+                setDark(true);
+            } else {
+                setDark(false);
+            }
+
+            if(window.scrollY > 0) {
+                setHasScrolled(true);
+            } else {
+                setHasScrolled(false);
+            }
+        }
+        onScroll();
+
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
     return(
-        <nav className="p-6 absolute w-full left-0 z-30 flex items-center justify-between">
+        <nav
+            className={twMerge(
+                "p-6 fixed w-full left-0 z-30 flex items-center justify-between border-b-[1px] border-b-transparent transition-[backdrop-filter,border] duration-300",
+                hasScrolled && 'backdrop-blur-md border-b-black/40',
+            )}
+            ref={ref}
+        >
             <div className="w-main max-w-main mx-auto h-[48px] flex items-center justify-between gap-8">
                 <Link
-                    className="relative z-30 text-2xl font-bold text-light" 
+                    className={twMerge(
+                        "relative z-30 text-2xl font-bold text-light transition-colors",
+                        !open && dark && 'text-primary',
+                    )}
                     href={'/'}
                 >
                     {process.env.NEXT_PUBLIC_WEBSITE_NAME}
@@ -39,7 +77,10 @@ export default function Navbar() {
                         {tabs.map(tab => (
                             <li key={tab.id}>
                                 <a
-                                    className="text-3xl md:text-base text-light font-semibold md:font-normal"
+                                    className={twMerge(
+                                        "text-3xl md:text-base text-light font-semibold md:font-normal transition-colors",
+                                        !open && dark && 'text-primary',
+                                    )}
                                     href={`#${tab.id}`}
                                 >
                                     {tab.text}

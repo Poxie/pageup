@@ -3,7 +3,7 @@ import HomeAboutCard from './HomeAboutCard';
 
 export default function HomeAbout() {
     return(
-        <section className="p-section bg-secondary">
+        <section className="p-section bg-secondary" id="about-us">
             <h2 className="mb-16 text-4xl font-bold text-center">
                 Vilka ligger bakom 
                 {' '}
