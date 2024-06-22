@@ -11,7 +11,7 @@ export default function HomeAbout() {
                     {process.env.NEXT_PUBLIC_WEBSITE_NAME}?
                 </span>
             </h2>
-            <ul className="w-main max-w-main mx-auto grid grid-cols-3 gap-4">
+            <ul className="w-main max-w-main mx-auto grid gap-x-4 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
                 {ABOUT_CARDS.map(card => (
                     <li key={card.name}>
                         <HomeAboutCard 
