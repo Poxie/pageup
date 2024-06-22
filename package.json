@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start --port=3001",
     "lint": "next lint"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
+    "sharp": "^0.33.4",
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
