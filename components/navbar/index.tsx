@@ -54,7 +54,7 @@ export default function Navbar() {
     return(
         <nav
             className={twMerge(
-                "p-6 fixed w-full left-0 z-30 flex items-center justify-between border-b-[1px] border-b-transparent transition-[backdrop-filter,border] duration-300",
+                "py-6 fixed w-full left-0 z-30 flex items-center justify-between border-b-[1px] border-b-transparent transition-[backdrop-filter,border] duration-300",
                 hasScrolled && 'backdrop-blur-md border-b-black/40',
             )}
             ref={ref}
