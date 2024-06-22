@@ -17,7 +17,7 @@ export default function Input({ onChange, value, placeholder, textArea }: {
 
     if(textArea) {
         return(
-            <textarea {...props} />
+            <textarea {...props} style={{ minHeight: 100 }} />
         )
     }
 
