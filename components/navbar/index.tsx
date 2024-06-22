@@ -98,7 +98,10 @@ export default function Navbar() {
                 </div>
                 {isSmall && (
                     <button 
-                        className={"relative z-40 text-light"}
+                        className={twMerge(
+                            "relative z-40 text-light",
+                            !open && dark && 'text-primary',
+                        )}
                         onClick={() => setOpen(!open)}
                         aria-label={open ? 'Stäng menyn' : 'Öppna menyn'}
                     >
