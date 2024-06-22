@@ -13,6 +13,7 @@ export default function HomeHero() {
     useEffect(() => {
         const onScroll = () => {
             if(!ref.current) return;
+            if(window.scrollY > ref.current.offsetHeight) return;
 
             const scroll = window.scrollY * SCROLL_FACTOR;
 
