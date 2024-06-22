@@ -6,7 +6,7 @@ const HERO_SUBTITLE = "Och det löser vi! Vi skapar fantastiska, högpresterande
 export default function HomeHero() {
     return(
         <div className={twMerge(
-            "h-[80dvh] relative",
+            "h-[65dvh] md:h-[80dvh] relative",
             "flex items-center justify-center overflow-hidden"
         )}>
             <div className="absolute h-full w-full overflow-hidden">
@@ -18,10 +18,10 @@ export default function HomeHero() {
             </div>
 
             <div className="w-[800px] max-w-main relative z-20 grid gap-5 text-center text-light">
-                <h1 className="text-5xl font-bold">
+                <h1 className="text-4xl md:text-5xl font-bold">
                     {HERO_TITLE}
                 </h1>
-                <p className="text-xl leading-8">
+                <p className="text-base leading-6 md:text-xl md:leading-8">
                     {HERO_SUBTITLE}
                 </p>
             </div>
