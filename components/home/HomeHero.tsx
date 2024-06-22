@@ -31,6 +31,7 @@ export default function HomeHero() {
                 "h-[65dvh] md:h-[80dvh] relative",
                 "flex items-center justify-center overflow-hidden"
             )}
+            id="hero"
         >
             <div 
                 className="w-full h-full flex items-center justify-center"

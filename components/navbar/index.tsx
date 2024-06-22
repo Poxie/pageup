@@ -51,6 +51,11 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
+    const handleClick = (id: string) => {
+        setOpen(false);
+        scrollToSection(id);
+    }
+
     return(
         <nav
             className={twMerge(
@@ -60,15 +65,15 @@ export default function Navbar() {
             ref={ref}
         >
             <div className="w-main max-w-main mx-auto flex items-center justify-between gap-8">
-                <Link
+                <button
                     className={twMerge(
                         "relative z-30 text-2xl font-bold text-light transition-colors",
                         !open && dark && 'text-primary',
                     )}
-                    href={'/'}
+                    onClick={() => handleClick('hero')}
                 >
                     {process.env.NEXT_PUBLIC_WEBSITE_NAME}
-                </Link>
+                </button>
                 <div className={twMerge(
                     "flex items-center flex-1 justify-between",
                     isSmall && "pt-28 fixed left-0 top-0 justify-start flex-col gap-10 w-full h-[100dvh] bg-black/90 transition-[left,opacity] duration-300 ease-in-out",
@@ -78,7 +83,7 @@ export default function Navbar() {
                         {tabs.map(tab => (
                             <li key={tab.id}>
                                 <button
-                                    onClick={() => scrollToSection(tab.id)}
+                                    onClick={() => handleClick(tab.id)}
                                     className={twMerge(
                                         "text-3xl md:text-base text-light font-semibold md:font-normal transition-colors",
                                         !open && dark && 'text-primary',
@@ -91,7 +96,7 @@ export default function Navbar() {
                     </ul>
                     <Button 
                         className="text-xl font-semibold md:text-base md:font-medium"
-                        onClick={() => scrollToSection('contact-us')}
+                        onClick={() => handleClick('contact-us')}
                     >
                         Kontakta oss
                     </Button>
