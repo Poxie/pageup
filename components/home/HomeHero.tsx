@@ -7,7 +7,7 @@ export default function HomeHero() {
     return(
         <div className={twMerge(
             "h-[80dvh] relative",
-            "flex items-center justify-center"
+            "flex items-center justify-center overflow-hidden"
         )}>
             <div className="absolute h-full w-full overflow-hidden">
                 <div className={twMerge(
