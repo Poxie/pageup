@@ -28,7 +28,7 @@ export default function HomeHero() {
     return(
         <div 
             className={twMerge(
-                "h-[65vh] md:h-[80vh] relative",
+                "h-[75vh] md:h-[80vh] relative",
                 "flex items-center justify-center overflow-hidden"
             )}
             id="hero"
