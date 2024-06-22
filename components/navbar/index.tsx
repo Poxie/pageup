@@ -76,8 +76,9 @@ export default function Navbar() {
                 </button>
                 <div className={twMerge(
                     "flex items-center flex-1 justify-between",
-                    isSmall && "pt-28 fixed left-0 top-0 justify-start flex-col gap-10 w-full h-[100dvh] bg-black/90 transition-[left,opacity] duration-300 ease-in-out",
-                    !open && isSmall && 'left-full opacity-0',
+                    "pt-28 fixed left-0 top-0 justify-start flex-col gap-10 w-full h-[100dvh] bg-black/90 transition-[left,opacity] duration-300 ease-in-out",
+                    "md:opacity-100 md:pt-0 md:relative md:left-[unset] md:top-[unset] md:justify-between md:flex-row md:gap-4 md:w-[unset] md:h-[unset] md:bg-transparent",
+                    !open && 'left-full opacity-0',
                 )}>
                     <ul className="flex flex-col md:flex-row items-center gap-10 md:gap-4">
                         {tabs.map(tab => (
@@ -101,18 +102,16 @@ export default function Navbar() {
                         Kontakta oss
                     </Button>
                 </div>
-                {isSmall && (
-                    <button 
-                        className={twMerge(
-                            "relative z-40 text-light",
-                            !open && dark && 'text-primary',
-                        )}
-                        onClick={() => setOpen(!open)}
-                        aria-label={open ? 'Stäng menyn' : 'Öppna menyn'}
-                    >
-                        <HamIcon className="w-8" />
-                    </button>
-                )}
+                <button 
+                    className={twMerge(
+                        "relative z-40 text-light md:hidden",
+                        !open && dark && 'text-primary',
+                    )}
+                    onClick={() => setOpen(!open)}
+                    aria-label={open ? 'Stäng menyn' : 'Öppna menyn'}
+                >
+                    <HamIcon className="w-8" />
+                </button>
             </div>
         </nav>
     )

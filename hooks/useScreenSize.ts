@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 type ScreenSize = 'sm' | 'md' | 'lg' | 'xl';
 
 const getScreenSize = () => {
-    if(typeof window === 'undefined') return 'xl';
+    if(typeof window === 'undefined') return 'md';
 
     const windowSize = window.innerWidth;
 
