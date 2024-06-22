@@ -59,7 +59,7 @@ export default function Navbar() {
             )}
             ref={ref}
         >
-            <div className="w-main max-w-main mx-auto h-[48px] flex items-center justify-between gap-8">
+            <div className="w-main max-w-main mx-auto flex items-center justify-between gap-8">
                 <Link
                     className={twMerge(
                         "relative z-30 text-2xl font-bold text-light transition-colors",
