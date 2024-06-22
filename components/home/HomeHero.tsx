@@ -1,4 +1,5 @@
 import ArrowIcon from "@/assets/icons/ArrowIcon";
+import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
 const HERO_TITLE = "Alla behöver en hemsida.";
@@ -9,12 +10,20 @@ export default function HomeHero() {
             "h-[65dvh] md:h-[80dvh] relative",
             "flex items-center justify-center overflow-hidden"
         )}>
-            <div className="absolute h-full w-full overflow-hidden">
-                <div className={twMerge(
-                    "h-full w-full scale-105 blur-sm",
-                    "bg-[url('/hero.jpg')] bg-no-repeat bg-cover bg-center",
-                    "after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:opacity-50 after:z-10"
-                )} />
+            <div 
+                className={twMerge(
+                    "absolute h-full w-full overflow-hidden",
+                    "after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:opacity-50 after:z-10",
+                )}
+            >
+                <Image 
+                    className="select-none"
+                    objectFit="cover"
+                    src="/hero.jpg"
+                    priority
+                    fill
+                    alt=""
+                />
             </div>
 
             <div className="w-[800px] max-w-main relative z-20 grid gap-5 text-center text-light">
