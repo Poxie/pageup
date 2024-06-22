@@ -87,7 +87,7 @@ export default function HomeContactForm() {
                     {feedback.message}
                 </span>
             )}
-            <div className="flex gap-3">
+            <div className="flex flex-col md:flex-row gap-3">
                 <Input 
                     onChange={text => updateInfo('name', text)}
                     placeholder="Fullständigt name"
