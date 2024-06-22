@@ -1,38 +1,64 @@
+"use client";
 import ArrowIcon from "@/assets/icons/ArrowIcon";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
+const SCROLL_FACTOR = .35;
 const HERO_TITLE = "Alla behöver en hemsida.";
 const HERO_SUBTITLE = "Och det löser vi! Vi skapar fantastiska, högpresterande webbplatser anpassade efter dina affärsbehov. Oavsett om du är en startup eller ett etablerat varumärke, förverkligar vi din vision med innovativ design och sömlös funktionalitet. Låt oss bygga din framgångshistoria online tillsammans.";
 export default function HomeHero() {
-    return(
-        <div className={twMerge(
-            "h-[65dvh] md:h-[80dvh] relative",
-            "flex items-center justify-center overflow-hidden"
-        )}>
-            <div 
-                className={twMerge(
-                    "absolute h-full w-full overflow-hidden",
-                    "after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:opacity-50 after:z-10",
-                )}
-            >
-                <Image 
-                    className="select-none"
-                    objectFit="cover"
-                    src="/hero.jpg"
-                    priority
-                    fill
-                    alt=""
-                />
-            </div>
+    const ref = useRef<HTMLDivElement>(null);
 
-            <div className="w-[800px] max-w-main relative z-20 grid gap-5 text-center text-light">
-                <h1 className="text-4xl md:text-5xl font-bold">
-                    {HERO_TITLE}
-                </h1>
-                <p className="text-base leading-6 md:text-xl md:leading-8">
-                    {HERO_SUBTITLE}
-                </p>
+    useEffect(() => {
+        const onScroll = () => {
+            if(!ref.current) return;
+
+            const scroll = window.scrollY * SCROLL_FACTOR;
+
+            const transform = `translateY(${scroll}px)`;
+            ref.current.style.transform = transform;
+        }
+
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    return(
+        <div 
+            className={twMerge(
+                "h-[65dvh] md:h-[80dvh] relative",
+                "flex items-center justify-center overflow-hidden"
+            )}
+        >
+            <div 
+                className="w-full h-full flex items-center justify-center"
+                ref={ref}
+            >
+                <div 
+                    className={twMerge(
+                        "absolute h-full w-full overflow-hidden",
+                        "after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:opacity-50 after:z-10",
+                    )}
+                >
+                    <Image 
+                        className="select-none"
+                        objectFit="cover"
+                        src="/hero.jpg"
+                        priority
+                        fill
+                        alt=""
+                    />
+                </div>
+
+                <div className="w-[800px] max-w-main relative z-20 grid gap-5 text-center text-light">
+                    <h1 className="text-4xl md:text-5xl font-bold">
+                        {HERO_TITLE}
+                    </h1>
+                    <p className="text-base leading-6 md:text-xl md:leading-8">
+                        {HERO_SUBTITLE}
+                    </p>
+                </div>
             </div>
 
             <div className="z-20 absolute bottom-0 left-2/4 -translate-x-2/4">
