@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import HamIcon from "@/assets/icons/HamIcon";
 import { useEffect, useRef, useState } from "react";
 import useScreenSize from "@/hooks/useScreenSize";
+import scrollToSection from "@/utils/scrollToSection";
 
 const tabs = [
     { text: 'Om oss', id: 'about-us' },
@@ -76,19 +77,22 @@ export default function Navbar() {
                     <ul className="flex flex-col md:flex-row items-center gap-10 md:gap-4">
                         {tabs.map(tab => (
                             <li key={tab.id}>
-                                <a
+                                <button
+                                    onClick={() => scrollToSection(tab.id)}
                                     className={twMerge(
                                         "text-3xl md:text-base text-light font-semibold md:font-normal transition-colors",
                                         !open && dark && 'text-primary',
                                     )}
-                                    href={`#${tab.id}`}
                                 >
                                     {tab.text}
-                                </a>
+                                </button>
                             </li>
                         ))}
                     </ul>
-                    <Button className="text-xl font-semibold md:text-base md:font-medium">
+                    <Button 
+                        className="text-xl font-semibold md:text-base md:font-medium"
+                        onClick={() => scrollToSection('contact-us')}
+                    >
                         Kontakta oss
                     </Button>
                 </div>

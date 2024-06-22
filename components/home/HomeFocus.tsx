@@ -5,7 +5,7 @@ import HomeFocusCard from './HomeFocusCard';
 
 export default function HomeFocus() {
     return(
-        <section>
+        <section id="how-we-work">
             <div className="p-section w-main max-w-main mx-auto md:flex divide-y-2 md:divide-y-0 md:divide-x-2 divide-secondary">
                 <div className="pb-5 md:pb-0 md:pr-8 flex-1 flex flex-col gap-3 md:sticky md:top-[20%] md:self-start">
                     <h2 className="text-3xl md:text-4xl font-semibold">
