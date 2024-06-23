@@ -90,7 +90,7 @@ export default function HomeContactForm() {
             <div className="flex flex-col md:flex-row gap-3">
                 <Input 
                     onChange={text => updateInfo('name', text)}
-                    placeholder="Fullständigt name"
+                    placeholder="Fullständigt namn"
                     value={info.name}
                 />
                 <Input 
