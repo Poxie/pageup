@@ -6,6 +6,8 @@ import HamIcon from "@/assets/icons/HamIcon";
 import { useEffect, useRef, useState } from "react";
 import useScreenSize from "@/hooks/useScreenSize";
 import scrollToSection from "@/utils/scrollToSection";
+import Image from "next/image";
+import LogoIcon from "@/assets/icons/LogoIcon";
 
 const tabs = [
     { text: 'Om oss', id: 'about-us' },
@@ -67,12 +69,21 @@ export default function Navbar() {
             <div className="w-main max-w-main mx-auto flex items-center justify-between gap-8">
                 <button
                     className={twMerge(
-                        "relative z-30 text-2xl font-bold text-light transition-colors",
+                        "relative z-30 flex items-center gap-2 text-2xl font-bold text-light transition-colors",
                         !open && dark && 'text-primary',
                     )}
                     onClick={() => handleClick('hero')}
                 >
-                    {process.env.NEXT_PUBLIC_WEBSITE_NAME}
+                    <LogoIcon 
+                        whiteClassName={dark ? 'fill-t-primary' : 'fill-c-primary'}
+                        mainColorClassName="fill-c-primary"
+                    />
+                    <span>
+                        daisy
+                        <span className="text-c-primary">
+                            web
+                        </span>
+                    </span>
                 </button>
                 <div className={twMerge(
                     "flex items-center flex-1 justify-between",

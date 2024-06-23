@@ -16,7 +16,7 @@ const config: Config = {
         primary: '#fff',
         secondary: '#F2F2F2',
         tertiary: '#E7E7E7',
-        'c-primary': '#DC143C',
+        'c-primary': '#DF9629',
         danger: '#FF0000',
         success: '#00FF00',
       },
@@ -31,7 +31,7 @@ const config: Config = {
         primary: '#0f172a',
         muted: '#475569',
         light: '#fff',
-        'c-primary': '#DC143C',
+        'c-primary': '#DF9629',
       },
       width: {
         main: '1200px',
@@ -43,8 +43,9 @@ const config: Config = {
         primary: '#fff',
         secondary: '#F2F2F2',
         tertiary: '#E7E7E7',
-        'c-primary': '#DC143C',
+        'c-primary': '#DF9629',
         't-muted': '#475569',
+        't-primary': '#0f172a',
       },
       animation: {
 
