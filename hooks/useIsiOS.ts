@@ -1,4 +1,6 @@
 export default function useIsiOS() {
+    if(typeof navigator === 'undefined') return false;
+
     return [
         'iPad Simulator',
         'iPhone Simulator',

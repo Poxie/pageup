@@ -25,6 +25,7 @@ export default function HomeHero() {
             const transform = `translateY(${scroll}px)`;
             ref.current.style.transform = transform;
         }
+        onScroll();
 
         window.addEventListener('scroll', onScroll);
         return () => window.removeEventListener('scroll', onScroll);
