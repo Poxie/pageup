@@ -1,5 +1,6 @@
 "use client";
 import ArrowIcon from "@/assets/icons/ArrowIcon";
+import useIsiOS from "@/hooks/useIsiOS";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
@@ -8,9 +9,13 @@ const SCROLL_FACTOR = .4;
 const HERO_TITLE = "Alla behöver en hemsida.";
 const HERO_SUBTITLE = "Och det löser vi! Vi skapar fantastiska, högpresterande webbplatser anpassade efter dina affärsbehov. Oavsett om du är en startup eller ett etablerat varumärke, förverkligar vi din vision med innovativ design och sömlös funktionalitet. Låt oss bygga din framgångshistoria online tillsammans.";
 export default function HomeHero() {
+    const isiOS = useIsiOS();
+
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        if(isiOS) return;
+
         const onScroll = () => {
             if(!ref.current) return;
             if(window.scrollY > ref.current.offsetHeight) return;
@@ -23,7 +28,7 @@ export default function HomeHero() {
 
         window.addEventListener('scroll', onScroll);
         return () => window.removeEventListener('scroll', onScroll);
-    }, []);
+    }, [isiOS]);
 
     return(
         <div 
