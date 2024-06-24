@@ -32,7 +32,7 @@ export default function HomeHero() {
     }, [isiOS]);
 
     return(
-        <div 
+        <section 
             className={twMerge(
                 "h-[75vh] md:h-[80vh] relative",
                 "flex items-center justify-center overflow-hidden"
@@ -89,6 +89,6 @@ export default function HomeHero() {
                     <ArrowIcon className="w-6 -mb-1 animate-bounce" />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
