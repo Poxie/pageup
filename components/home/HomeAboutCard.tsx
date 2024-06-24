@@ -1,16 +1,28 @@
+"use client";
 import { AboutCard } from "@/assets/data";
 import MailIcon from "@/assets/icons/MailIcon";
 import MobileIcon from "@/assets/icons/MobileIcon";
 import QuoteIcon from "@/assets/icons/QuoteIcon";
+import useAnimateIntoView, { DEFAULT_INITIAL_STATE } from "@/hooks/useAnimateIntoView";
 import Image from "next/image";
+import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-export default function HomeAboutCard({ data: { name, title, image, quote, telephone, email } }: {
+export default function HomeAboutCard({ index, data: { name, title, image, quote, telephone, email } }: {
     data: AboutCard;
+    index: number;
 }) {
+    const ref = useRef<HTMLDivElement>(null);
+
+    useAnimateIntoView(ref, { delay: index * 150 });
+
     const phoneHref = `tel:${telephone.replace('-', '').replaceAll(' ', '').trim()}`;
     return(
-        <div className="h-full p-5 flex flex-col gap-3 bg-primary rounded-lg shadow-md">
+        <div 
+            className="h-full p-5 flex flex-col gap-3 bg-primary rounded-lg shadow-md"
+            style={DEFAULT_INITIAL_STATE}
+            ref={ref}
+        >
             <div className="flex gap-2">
                 <div className={twMerge(
                     "[--translate:3.5rem] border-[.5rem] -mb-[--translate] -translate-y-[--translate] border-primary rounded-full overflow-hidden",
