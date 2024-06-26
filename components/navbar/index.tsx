@@ -10,9 +10,10 @@ import Image from "next/image";
 import LogoIcon from "@/assets/icons/LogoIcon";
 
 const tabs = [
-    { text: 'Om oss', id: 'about-us' },
-    { text: 'Hur vi jobbar', id: 'how-we-work' },
+    { text: 'Vår process', id: 'process' },
     { text: 'Referenser', id: 'references' },
+    { text: 'Hur vi jobbar', id: 'how-we-work' },
+    { text: 'Om oss', id: 'about-us' },
 ]
 export default function Navbar() {
     const screenSize = useScreenSize();
@@ -28,7 +29,7 @@ export default function Navbar() {
     }, [isSmall]);
     useEffect(() => {
         const onScroll = () => {
-            const aboutSection = document.getElementById('about-us');
+            const aboutSection = document.getElementById('process');
             if(!ref.current || !aboutSection) return;
 
             const rect = aboutSection.getBoundingClientRect();
