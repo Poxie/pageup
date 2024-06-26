@@ -10,7 +10,7 @@ export default function HomeProcess() {
 
     return(
         <section className="py-40 bg-secondary overflow-hidden">
-            <div className="w-[1000px] max-w-main mx-auto relative grid gap-72" ref={containerRef}>
+            <div className="w-[1000px] max-w-main mx-auto relative grid gap-52 md:gap-72" ref={containerRef}>
                 {process.map((step, index) => {
                     const ref = refs[index];
 

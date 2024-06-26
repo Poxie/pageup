@@ -22,8 +22,8 @@ const HomeProcessCard = React.forwardRef<HTMLDivElement, Props>(({
             reversed ? "flex-row-reverse" : "flex-row",
         )}>
             <div className="flex-1 relative">
-                <h2 className="mb-3 text-3xl font-semibold">{title}</h2>
-                <p className="text-lg leading-8">{description}</p>
+                <h2 className="mb-3 text-2xl md:text-3xl font-semibold">{title}</h2>
+                <p className="md:text-lg leading-8">{description}</p>
                 <div 
                     className={twMerge(
                         "z-[-1] absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4",
@@ -34,7 +34,7 @@ const HomeProcessCard = React.forwardRef<HTMLDivElement, Props>(({
                 </div>
             </div>
             <div className={twMerge(
-                "flex-1 flex",
+                "flex-1 hidden md:flex",
                 !reversed && 'justify-end',
             )}>
                 <HomeProcessIcon 

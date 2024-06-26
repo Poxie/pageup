@@ -5,7 +5,7 @@ import DesignIcon from "@/assets/icons/DesignIcon";
 export default function HomeProcessIcon({ icon }: {
     icon: string;
 }) {
-    const className = "w-56 fill-c-primary/50";
+    const className = "w-24 md:w-56 fill-c-primary/50";
 
     switch(icon) {
         case 'brainstorm':
