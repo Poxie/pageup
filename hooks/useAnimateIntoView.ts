@@ -22,6 +22,7 @@ export default function useAnimateIntoView(ref: RefObject<HTMLElement>, {
 } | undefined = {}) {
     const getVisible = (ref: RefObject<HTMLElement>) => {
         if(!ref.current) return false;
+        if(window.getComputedStyle(ref.current).display === 'none') return false;
 
         const { top, height } = ref.current.getBoundingClientRect();
         return top / window.innerHeight <= threshold;
