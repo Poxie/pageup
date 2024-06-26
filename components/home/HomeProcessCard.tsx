@@ -59,4 +59,6 @@ const HomeProcessCard = React.forwardRef<HTMLDivElement, Props>(({
         </div>
     )
 })
+HomeProcessCard.displayName = 'HomeProcessCard';
+
 export default HomeProcessCard;
