@@ -47,6 +47,14 @@ const config: Config = {
         't-muted': '#475569',
         't-primary': '#0f172a',
       },
+      stroke: {
+        primary: '#fff',
+        secondary: '#F2F2F2',
+        tertiary: '#E7E7E7',
+        'c-primary': '#DF9629',
+        't-muted': '#475569',
+        't-primary': '#0f172a',
+      },
       animation: {
 
       }

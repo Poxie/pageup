@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Det börjar med dig.",
+        "description": "Vi börjar med att förstå dig och dina mål genom att lyssna noga. Din input är avgörande för att skapa en hemsida som verkligen representerar dig.",
+        "icon": "brainstorm"
+    },
+    {
+        "title": "Vi ger dig en design.",
+        "description": "Med dina idéer skapar våra designers en unik och användarvänlig design. Vi ser till att hemsidan speglar din personlighet och ditt varumärke, och att du är nöjd med resultatet.",
+        "icon": "design"
+    },
+    {
+        "title": "Vi bygger din hemsida.",
+        "description": "Våra utvecklare bygger en funktionell och engagerande hemsida baserat på designen. Vi ser till att allt fungerar perfekt och erbjuder support och uppdateringar efter lanseringen.",
+        "icon": "build"
+    }
+]
