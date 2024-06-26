@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useRef, useState } from "react";
 
-const TOP_OFFSET = 50;
+const START_OFFSET = 50;
 const CURVE_SIZE = 100;
 export default function HomeProcessLine({ refs, containerRef }: {
     refs: RefObject<HTMLElement>[];
@@ -35,11 +35,11 @@ export default function HomeProcessLine({ refs, containerRef }: {
             if(!currentRef) return;
 
             const { left, top, height, width } = currentRef.getBoundingClientRect();
-            const startPoint = { x: left - containerLeft + width / 2, y: top - containerTop + height - TOP_OFFSET, isStart: true };
+            const startPoint = { x: left - containerLeft + width / 2, y: top - containerTop + height - START_OFFSET, isStart: true };
 
             if(nextRef) {
                 const { left: nextLeft, top: nextTop, height: nextHeight, width: nextWidth } = nextRef.getBoundingClientRect();
-                const endPoint = { x: nextLeft - containerLeft + nextWidth / 2, y: nextTop - containerTop + TOP_OFFSET };
+                const endPoint = { x: nextLeft - containerLeft + nextWidth / 2, y: nextTop - containerTop };
 
                 const diffX = endPoint.x - startPoint.x;
                 const diffY = endPoint.y - startPoint.y;
@@ -91,7 +91,7 @@ export default function HomeProcessLine({ refs, containerRef }: {
             xmlns="http://www.w3.org/2000/svg"
             ref={svgRef}
         >
-            <path d={d} stroke="black" strokeDasharray="10" strokeWidth={1.5} className="stroke-c-primary" fill="none" />
+            <path d={d} stroke="black" strokeDasharray="8" strokeWidth={1.5} className="stroke-c-primary" fill="none" />
         </svg>
     )
 }
