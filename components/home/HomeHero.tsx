@@ -50,8 +50,7 @@ export default function HomeHero() {
                     )}
                 >
                     <Image 
-                        className="select-none"
-                        objectFit="cover"
+                        className="select-none object-cover"
                         src="/hero.jpg"
                         priority
                         fill
