@@ -11,11 +11,11 @@ export default function Home() {
         <main>
             <HomeHero />
             <HomeProcess />
-            <HomeAbout />
+            <HomeProjects />
             <BallDivider />
             <HomeFocus />
             <BallDivider className="rotate-180" />
-            <HomeProjects />
+            <HomeAbout />
             <HomeContact />
         </main>
     )
