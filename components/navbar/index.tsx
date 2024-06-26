@@ -1,12 +1,10 @@
 "use client";
-import Link from "next/link";
 import Button from "../button";
 import { twMerge } from "tailwind-merge";
 import HamIcon from "@/assets/icons/HamIcon";
 import { useEffect, useRef, useState } from "react";
 import useScreenSize from "@/hooks/useScreenSize";
 import scrollToSection from "@/utils/scrollToSection";
-import Image from "next/image";
 import LogoIcon from "@/assets/icons/LogoIcon";
 
 const tabs = [
@@ -89,16 +87,16 @@ export default function Navbar() {
                 <div className={twMerge(
                     "flex items-center flex-1 justify-between",
                     "pt-28 fixed left-0 top-0 justify-start flex-col gap-10 w-full h-[100dvh] bg-black/90 transition-[left,opacity] duration-300 ease-in-out",
-                    "md:opacity-100 md:pt-0 md:relative md:left-[unset] md:top-[unset] md:justify-between md:flex-row md:gap-4 md:w-[unset] md:h-[unset] md:bg-transparent",
+                    "lg:opacity-100 lg:pt-0 lg:relative lg:left-[unset] lg:top-[unset] lg:justify-between lg:flex-row lg:gap-4 lg:w-[unset] lg:h-[unset] lg:bg-transparent",
                     !open && 'left-full opacity-0',
                 )}>
-                    <ul className="flex flex-col md:flex-row items-center gap-10 md:gap-4">
+                    <ul className="flex flex-col lg:flex-row items-center gap-10 lg:gap-4">
                         {tabs.map(tab => (
                             <li key={tab.id}>
                                 <button
                                     onClick={() => handleClick(tab.id)}
                                     className={twMerge(
-                                        "text-3xl md:text-base text-light font-semibold md:font-normal transition-colors",
+                                        "text-3xl lg:text-base text-light font-semibold lg:font-normal transition-colors",
                                         !open && dark && 'text-primary',
                                     )}
                                 >
@@ -108,7 +106,7 @@ export default function Navbar() {
                         ))}
                     </ul>
                     <Button 
-                        className="text-xl font-semibold md:text-base md:font-medium"
+                        className="text-xl font-semibold lg:text-base lg:font-medium"
                         onClick={() => handleClick('contact-us')}
                     >
                         Kontakta oss
@@ -116,7 +114,7 @@ export default function Navbar() {
                 </div>
                 <button 
                     className={twMerge(
-                        "relative z-40 text-light md:hidden",
+                        "relative z-40 text-light lg:hidden",
                         !open && dark && 'text-primary',
                     )}
                     onClick={() => setOpen(!open)}
