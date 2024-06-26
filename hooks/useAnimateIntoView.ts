@@ -60,4 +60,6 @@ export default function useAnimateIntoView(ref: RefObject<HTMLElement>, {
         window.addEventListener('scroll', onScroll);
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
+
+    return { initialState };
 }
