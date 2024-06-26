@@ -7,7 +7,7 @@ import { twMerge } from "tailwind-merge";
 
 const SCROLL_FACTOR = .5;
 const HERO_TITLE = "Alla behöver en hemsida.";
-const HERO_SUBTITLE = "Och det löser vi! Vi skapar fantastiska, högpresterande webbplatser anpassade efter dina affärsbehov. Oavsett om du är en startup eller ett etablerat varumärke, förverkligar vi din vision med innovativ design och sömlös funktionalitet. Låt oss bygga din framgångshistoria online tillsammans.";
+const HERO_SUBTITLE = "Oavsett om du är en startup eller ett etablerat varumärke, förverkligar vi din vision med innovativ design och sömlös funktionalitet. Låt oss bygga din framgångshistoria online tillsammans.";
 export default function HomeHero() {
     const isiOS = useIsiOS();
 
