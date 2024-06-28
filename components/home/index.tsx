@@ -12,7 +12,6 @@ export default function Home() {
             <HomeHero />
             <HomeProcess />
             <HomeProjects />
-            <BallDivider />
             <HomeFocus />
             <BallDivider className="rotate-180" />
             <HomeAbout />

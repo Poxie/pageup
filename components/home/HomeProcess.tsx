@@ -9,8 +9,8 @@ export default function HomeProcess() {
     const refs = process.map(() => React.createRef<HTMLDivElement>());
 
     return(
-        <section className="py-40 bg-secondary overflow-hidden" id="process">
-            <div className="w-[1000px] max-w-main mx-auto relative grid gap-52 md:gap-72" ref={containerRef}>
+        <section className="bg-secondary overflow-hidden" id="process">
+            <div className="relative" ref={containerRef}>
                 {process.map((step, index) => {
                     const ref = refs[index];
 
@@ -18,6 +18,7 @@ export default function HomeProcess() {
                         <HomeProcessCard 
                             card={step}
                             index={index}
+                            isLast={index === process.length - 1}
                             ref={ref}
                             key={step.title}
                         />

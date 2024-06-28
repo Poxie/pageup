@@ -5,14 +5,17 @@ import React, { RefObject, useRef } from "react";
 import BrainstormIcon from "@/assets/icons/BrainstormIcon";
 import HomeProcessIcon from "./HomeProcessIcon";
 import useAnimateIntoView from "@/hooks/useAnimateIntoView";
+import WaveDivider from "@/assets/icons/WaveDivider";
 
 type Props = {
     card: ProcessCard;
     index: number;
+    isLast: boolean;
 }
 
 const HomeProcessCard = React.forwardRef<HTMLDivElement, Props>(({
     index,
+    isLast,
     card: { title, description, icon }, 
 }, ref) => {
     const textRef = useRef<HTMLDivElement>(null);
@@ -24,39 +27,49 @@ const HomeProcessCard = React.forwardRef<HTMLDivElement, Props>(({
     const reversed = index % 2 !== 0;
 
     return(
+        <>
         <div className={twMerge(
-            "flex items-center relative z-10",
-            reversed ? "flex-row-reverse" : "flex-row",
+            "py-24 md:py-36 relative",
+            isLast && 'bg-primary',
         )}>
-            <div 
-                className="flex-1 relative"
-                style={initialState}
-                ref={textRef}
-            >
-                <h2 className="mb-3 text-2xl md:text-3xl font-semibold">{title}</h2>
-                <p className="md:text-lg leading-8">{description}</p>
+            {isLast && (
+                <WaveDivider className="absolute top-0 left-0 w-full" />
+            )}
+            <div className={twMerge(
+                "w-[1000px] max-w-main mx-auto flex items-center relative z-10",
+                reversed ? "flex-row-reverse" : "flex-row",
+            )}>
+                <div 
+                    className="flex-1 relative"
+                    style={initialState}
+                    ref={textRef}
+                >
+                    <h2 className="mb-3 text-2xl md:text-3xl font-semibold">{title}</h2>
+                    <p className="md:text-lg leading-8">{description}</p>
+                    <div 
+                        className={twMerge(
+                            "z-[-1] absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4",
+                        )}
+                        ref={ref}
+                    >
+                        <CloudIllustration index={index} />
+                    </div>
+                </div>
                 <div 
                     className={twMerge(
-                        "z-[-1] absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4",
+                        "flex-1 hidden md:flex",
+                        !reversed && 'justify-end',
                     )}
-                    ref={ref}
+                    style={initialState}
+                    ref={iconRef}
                 >
-                    <CloudIllustration index={index} />
+                    <HomeProcessIcon 
+                        icon={icon}
+                    />
                 </div>
             </div>
-            <div 
-                className={twMerge(
-                    "flex-1 hidden md:flex",
-                    !reversed && 'justify-end',
-                )}
-                style={initialState}
-                ref={iconRef}
-            >
-                <HomeProcessIcon 
-                    icon={icon}
-                />
-            </div>
         </div>
+        </>
     )
 })
 HomeProcessCard.displayName = 'HomeProcessCard';
