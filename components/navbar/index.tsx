@@ -74,8 +74,11 @@ export default function Navbar() {
                     onClick={() => handleClick('hero')}
                 >
                     <LogoIcon 
-                        whiteClassName={dark ? "fill-t-primary" : 'fill-white'}
-                        mainColorClassName={"fill-c-primary"}
+                        whiteClassName={twMerge(
+                            "transition-colors",
+                            !open && dark ? "fill-t-primary" : 'fill-white',
+                        )}
+                        mainColorClassName={"fill-c-primary transition-colors"}
                     />
                     <span>
                         daisy
