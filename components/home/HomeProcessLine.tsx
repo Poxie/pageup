@@ -39,7 +39,7 @@ export default function HomeProcessLine({ refs, containerRef }: {
 
             if(nextRef) {
                 const { left: nextLeft, top: nextTop, height: nextHeight, width: nextWidth } = nextRef.getBoundingClientRect();
-                const endPoint = { x: nextLeft - containerLeft + nextWidth / 2, y: nextTop - containerTop };
+                const endPoint = { x: nextLeft - containerLeft + nextWidth / 2, y: nextTop - containerTop + START_OFFSET };
 
                 const diffX = endPoint.x - startPoint.x;
                 const diffY = endPoint.y - startPoint.y;
