@@ -19,6 +19,7 @@ const config: Config = {
         'c-primary': '#DF9629',
         danger: '#FF0000',
         success: '#00FF00',
+        "t-primary": "#0f172a",
       },
       borderColor: {
         primary: '#fff',
