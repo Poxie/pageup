@@ -1,17 +1,26 @@
 "use client";
 import ArrowIcon from "@/assets/icons/ArrowIcon";
+import useAnimateIntoView from "@/hooks/useAnimateIntoView";
 import useIsiOS from "@/hooks/useIsiOS";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 const SCROLL_FACTOR = .5;
-const HERO_TITLE = "Alla behöver en hemsida.";
-const HERO_SUBTITLE = "Oavsett om du är en startup eller ett etablerat varumärke, förverkligar vi din vision med innovativ design och sömlös funktionalitet. Låt oss bygga din framgångshistoria online tillsammans.";
+const HERO_SUBTITLE = "Oavsett om du är en startup eller ett etablerat varumärke, förverkligar vi din vision. Låt oss bygga din framgång online tillsammans.";
 export default function HomeHero() {
     const isiOS = useIsiOS();
 
     const ref = useRef<HTMLDivElement>(null);
+    const hero1Ref = useRef<HTMLSpanElement>(null);
+    const hero2Ref = useRef<HTMLSpanElement>(null);
+    const hero3Ref = useRef<HTMLSpanElement>(null);
+    const paragraphRef = useRef<HTMLParagraphElement>(null);
+
+    const { initialState } = useAnimateIntoView(hero1Ref, { delay: 0 });
+    useAnimateIntoView(hero2Ref, { delay: 450 });
+    useAnimateIntoView(hero3Ref, { delay: 650 });
+    useAnimateIntoView(paragraphRef, { delay: 900 });
 
     useEffect(() => {
         if(isiOS) return;
@@ -59,10 +68,34 @@ export default function HomeHero() {
                 </div>
 
                 <div className="w-[800px] max-w-main relative z-20 grid gap-5 text-center text-light">
-                    <h1 className="text-4xl md:text-5xl font-bold">
-                        {HERO_TITLE}
+                    <h1 className="flex justify-center flex-wrap gap-2 md:gap-3 text-4xl md:text-5xl font-bold">
+                        <span 
+                            className="block"
+                            style={initialState}
+                            ref={hero1Ref}
+                        >
+                            Alla
+                        </span>
+                        <span
+                            className="block"
+                            style={initialState} 
+                            ref={hero2Ref}
+                        >
+                            behöver en
+                        </span>
+                        <span
+                            className="block"
+                            style={initialState} 
+                            ref={hero3Ref}
+                        >
+                            hemsida.
+                        </span>
                     </h1>
-                    <p className="text-base leading-6 md:text-xl md:leading-8">
+                    <p 
+                        className="text-lg leading-6 md:text-xl md:leading-8"
+                        style={initialState}
+                        ref={paragraphRef}
+                    >
                         {HERO_SUBTITLE}
                     </p>
                 </div>
