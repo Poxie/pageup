@@ -17,11 +17,11 @@ export default function HomeProjectCard({ index, card: { title, shortDescription
 
     return(
         <div 
-            className={"hover:z-10 relative group rounded-md border-[1px] transition-[box-shadow,transform,background-color]"}
+            className={"hover:z-10 relative group rounded-md border-[1px]"}
             style={initialState}
             ref={ref}
         >
-            <div className="hidden md:block z-[1] relative rounded-md overflow-hidden">
+            <div className="m-3 hidden md:block z-[1] relative rounded-md overflow-hidden">
                 <Image 
                     className="w-full object-cover"
                     src={`/imgs/projects/${image}`}
