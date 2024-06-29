@@ -2,6 +2,7 @@
 import ArrowIcon from "@/assets/icons/ArrowIcon";
 import useAnimateIntoView from "@/hooks/useAnimateIntoView";
 import useIsiOS from "@/hooks/useIsiOS";
+import scrollToSection from "@/utils/scrollToSection";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
@@ -114,12 +115,16 @@ export default function HomeHero() {
                     <path d="M149 67.5V0C149 0 128.808 19.1524 92.6028 38.4238C56.3972 57.6952 0 67.5 0 67.5H149Z" className="fill-secondary" />
                 </svg>
 
-                <div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 flex flex-col items-center gap-2 text-primary">
+                <button 
+                    className="w-full h-full absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 flex flex-col justify-center items-center gap-2 text-primary"
+                    onClick={() => scrollToSection('process')}
+                    aria-label="Läs mer"
+                >
                     <span>
                         Läs mer
                     </span>
                     <ArrowIcon className="w-6 -mb-1 animate-bounce" />
-                </div>
+                </button>
             </div>
         </section>
     )
