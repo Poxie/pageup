@@ -5,5 +5,12 @@
         "description": "En användarvänlig hemsida för ett biltvättsföretag med tvättbokning, företagsinformation och prissättning.",
         "image": "intivo.png",
         "link": "https://intivo.se"
+    },
+    {
+        "title": "Orminge Grillen",,
+        "shortDescription": "En restaurang hemsida",
+        "description": "En hemsida för en restaurang med meny, kontaktinformation och öppettider.",
+        "image": "ormingegrillen.png",
+        "link": "https://ormingegrillen.se"
     }
 ]
