@@ -17,13 +17,13 @@ export default function HomeProjectCard({ index, card: { title, shortDescription
 
     return(
         <div 
-            className={"hover:z-10 relative group rounded-md border-[1px]"}
+            className={"[--image-ratio:2/1.23] hover:z-10 relative group rounded-md border-[1px]"}
             style={initialState}
             ref={ref}
         >
             <div className="m-3 hidden md:block z-[1] relative rounded-md overflow-hidden">
                 <Image 
-                    className="w-full object-cover"
+                    className="w-full aspect-[--image-ratio] object-cover"
                     src={`/imgs/projects/${image}`}
                     alt={title}
                     width={300}
@@ -54,7 +54,7 @@ export default function HomeProjectCard({ index, card: { title, shortDescription
                 "group-hover:opacity-100 group-hover:md:scale-110 group-hover:shadow-lg",
             )}>
                 <Image 
-                    className="w-full"
+                    className="w-full aspect-[--image-ratio]"
                     src={`/imgs/projects/${image}`}
                     alt={title}
                     width={300}
