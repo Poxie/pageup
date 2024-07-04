@@ -1,5 +1,6 @@
 "use client";
-import { AboutCard } from "@/assets/data";
+import { AboutCard } from "@/assets/data/types";
+import LinkedInIcon from "@/assets/icons/LinkedInIcon";
 import MailIcon from "@/assets/icons/MailIcon";
 import MobileIcon from "@/assets/icons/MobileIcon";
 import QuoteIcon from "@/assets/icons/QuoteIcon";
@@ -8,7 +9,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-export default function HomeAboutCard({ index, data: { name, title, image, quote, telephone, email } }: {
+export default function HomeAboutCard({ index, data: { name, title, image, quote, telephone, email, linkedin } }: {
     data: AboutCard;
     index: number;
 }) {
@@ -67,6 +68,16 @@ export default function HomeAboutCard({ index, data: { name, title, image, quote
                         href={`mailto:${email}`}
                     >
                         {email}
+                    </a>
+                </div>
+                <div className="flex gap-2 text-muted">
+                    <LinkedInIcon className="w-5" />
+                    <a 
+                        className="text-sm hover:underline"
+                        href={linkedin}
+                        target="_blank"
+                    >
+                        {name}
                     </a>
                 </div>
             </div>

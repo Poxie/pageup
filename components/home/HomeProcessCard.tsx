@@ -45,7 +45,7 @@ const HomeProcessCard = React.forwardRef<HTMLDivElement, Props>(({
                     ref={textRef}
                 >
                     <h2 className="mb-3 text-2xl md:text-3xl font-semibold">{title}</h2>
-                    <p className="md:text-lg leading-8">{description}</p>
+                    <p className="text-sm md:text-lg leading-7">{description}</p>
                     <div 
                         className={twMerge(
                             "z-[-1] absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4",

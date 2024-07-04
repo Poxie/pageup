@@ -1,17 +1,17 @@
 [
     {
         "title": "Det börjar med dig.",
-        "description": "Vi börjar med att förstå dig och dina mål genom att lyssna noga. Din input är avgörande för att skapa en hemsida som verkligen representerar dig.",
+        "description": "Vi bjuder på ett kostnadsfritt och förutsättningslöst möte för att lära känna er bättre. Om ni känner att vi är en bra match, vill vi gärna hjälpa er att utveckla er nya hemsida.",
         "icon": "brainstorm"
     },
     {
         "title": "Vi ger dig en design.",
-        "description": "Med dina idéer skapar våra designers en unik och användarvänlig design. Vi ser till att hemsidan speglar din personlighet och ditt varumärke, och att du är nöjd med resultatet.",
+        "description": "Med era idéer skapar vi en vacker design som speglar er och ert företag. Medan vi designar tar vi feedback från er och gör de förändringar som behövs för att säkerställa att ni är helt nöjda med resultatet.",
         "icon": "design"
     },
     {
         "title": "Vi bygger din hemsida.",
-        "description": "Våra utvecklare bygger en funktionell och engagerande hemsida baserat på designen. Vi ser till att allt fungerar perfekt och erbjuder support och uppdateringar efter lanseringen.",
+        "description": "Vi hemsidan från grunden med fokus på prestanda, användarvänlighet och SEO. När hemsidan är färdig hostar vi den åt er, ser till att allt fungerar perfekt och erbjuder support samt uppdateringar efter publiceringen.",
         "icon": "build"
     }
 ]

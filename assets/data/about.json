@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Albin Kärvling",
+        "title": "Webbutvecklare",
+        "image": "/imgs/albin.jpg",
+        "quote": "Med över 8 års erfarenhet som webbutvecklare, trivs jag med att skapa sömlösa digitala upplevelser som förenar kreativitet med precision. Min passion ligger i att driva teknologiska gränser för att skapa fängslande online-lösningar.",
+        "telephone": "073-722 64 98",
+        "email": "albin@daisyweb.se",
+        "linkedin": "https://www.linkedin.com/in/albin-k%C3%A4rvling-237a851a8/"
+    },
+    {
+        "name": "Hektor Wennerström",
+        "title": "Relationschef",
+        "image": "/imgs/hektor.jpg",
+        "quote": "Som relationschef är mitt mål att inte bara möta utan överträffa våra kunders förväntningar. Jag brinner för att skapa mervärde och leverera enastående kundupplevelser. Varje dag strävar jag efter att vara en pålitlig partner för att hjälpa dig att nå dina affärsmål och skapa långsiktiga framgångar.",
+        "telephone": "079-349 88 70",
+        "email": "hektor.wennerstrom@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/hektor-wennerstrom-2b2487288/"
+    },
+    {
+        "name": "Ludvig Bergström",
+        "title": "Webbutvecklare",
+        "image": "/imgs/ludvig.jpg",
+        "quote": "Erfaren webbutvecklare som för närvarande sommarjobbar på Atlas Copco och kommer att börja studera till civilingenjör inom industriell ekonomi på KTH till hösten. Har arbetat med moderna teknologier för att skapa hemsidor som uppfyller dagens standard.",
+        "telephone": "073-613 01 68",
+        "email": "ludvig.benjaminbergstrom@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/ludvig-bergstrom/"
+    }
+]

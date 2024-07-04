@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from 'react';
-import { ABOUT_CARDS } from '@/assets/data';
+import AboutCards from '@/assets/data/about.json';
 import HomeAboutCard from './HomeAboutCard';
 import useAnimateIntoView, { DEFAULT_INITIAL_STATE } from '@/hooks/useAnimateIntoView';
 
@@ -23,7 +23,7 @@ export default function HomeAbout() {
                 </span>
             </h2>
             <ul className="w-main max-w-main mx-auto grid gap-x-4 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-                {ABOUT_CARDS.map((card, key) => (
+                {AboutCards.map((card, key) => (
                     <li key={card.name}>
                         <HomeAboutCard 
                             index={key}
